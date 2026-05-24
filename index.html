@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahmoud Abd Alraheem | Data Analyst</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #1e3a5f;
+      border: 3px solid #38bdf8;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #38bdf8;
+      object-fit: cover;
+    }
+    .hero h1 { font-size: 40px; margin: 0 0 8px; color: #ffffff; }
+    .hero h2 { color: #38bdf8; font-size: 18px; margin: 0 0 20px; font-weight: normal; }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: #38bdf8; color: #0f172a; }
+    .btn-secondary {
+      background: transparent;
+      color: #38bdf8;
+      border: 2px solid #38bdf8;
+    }
+
+    .section {
+      padding: 50px 20px;
+      border-top: 1px solid #1e293b;
+    }
+    .section h3 {
+      text-align: center;
+      font-size: 22px;
+      color: #38bdf8;
+      margin: 0 0 10px;
+      letter-spacing: 2px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+      margin: 0 0 30px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .skill {
+      background: #1e293b;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #94a3b8;
+      border: 1px solid #334155;
+    }
+
+    .category-title {
+      font-size: 16px;
+      color: #38bdf8;
+      margin: 40px auto 16px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 10px;
+      max-width: 750px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 750px;
+      margin: 0 auto 10px;
+    }
+    .project-card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #334155;
+    }
+    .project-card h4 { margin: 0 0 10px; color: #e2e8f0; font-size: 16px; }
+    .project-card p { margin: 0; font-size: 14px; color: #64748b; line-height: 1.7; }
+    .tag {
+      display: inline-block;
+      background: #0f172a;
+      color: #38bdf8;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      margin: 8px 4px 0 0;
+      border: 1px solid #38bdf8;
+    }
+    .impact {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #4ade80;
+      font-weight: bold;
+    }
+
+    .links-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      border-top: 1px solid #1e293b;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 15px;
+      border: 1px solid #334155;
+    }
+    .link-btn:hover { border-color: #38bdf8; color: #38bdf8; }
+
+    .footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #334155;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="photo.JPG" class="avatar" alt="Mahmoud" />
+    <h1>Mahmoud Abd Alraheem</h1>
+    <h2>Data Analyst &nbsp;|&nbsp; Power BI &nbsp;|&nbsp; SAP SD &nbsp;|&nbsp; Automation</h2>
+    <p>
+      A results-driven Data Analyst with a proven track record of designing and delivering 
+      high-impact business intelligence solutions, SAP automation tools, and Power BI 
+      reporting systems in the FMCG sector. Specialized in turning complex operational 
+      challenges into smart, automated solutions that save time, eliminate errors, and 
+      empower decision-makers with real-time insights.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:abdalraheemmahmoud453@gmail.com">Contact Me</a>
+      <a class="btn btn-secondary" href="cv.pdf" download>Download CV</a>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h3>SKILLS</h3>
+    <div class="skills-grid">
+      <div class="skill">Power BI</div>
+      <div class="skill">DAX</div>
+      <div class="skill">SAP SD</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Power Query</div>
+      <div class="skill">Excel VBA</div>
+      <div class="skill">Automation</div>
+      <div class="skill">Data Modeling</div>
+      <div class="skill">Business Intelligence</div>
+      <div class="skill">SAP GUI Scripting</div>
+      <div class="skill">SharePoint</div>
+      <div class="skill">Sales Buzz</div>
+      <div class="skill">Power Pivot</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h3>PROJECTS</h3>
+    <p class="section-sub">Enterprise-grade solutions built from scratch to solve real business challenges</p>
+
+    <!-- Power BI -->
+    <div class="category-title">Power BI Reports</div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h4>Unified Regional Intelligence Report</h4>
+        <p>
+          Pioneered the company's first fully unified Power BI report covering the Upper Egypt 
+          and Canal Region — a complex territory spanning 13 governorates and over 100 sales 
+          territories. The report is automatically refreshed every morning to deliver the latest 
+          sales performance data and actionable insights to leadership. Built with Row-Level 
+          Security (RLS) to ensure each stakeholder sees only their relevant data, maintaining 
+          full confidentiality across the organization.
+        </p>
+        <p class="impact">Serving 25+ stakeholders | 13 governorates | 100+ territories</p>
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">SAP</span>
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Row Level Security</span>
+      </div>
+      <div class="project-card">
+        <h4>Dual-Source Sales Intelligence Report</h4>
+        <p>
+          Designed and delivered the company's first Power BI report to successfully integrate 
+          two previously siloed sales data sources — SAP ERP (direct sales) and Sales Buzz 
+          (indirect sales) — into a single unified reporting view. This breakthrough eliminated 
+          blind spots in sales tracking and gave management a complete 360° picture of sales 
+          performance for the first time in the company's history.
+        </p>
+        <p class="impact">First dual-source report in company history | Full sales visibility</p>
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">SAP ERP</span>
+        <span class="tag">Sales Buzz</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+    </div>
+
+    <!-- SAP Automation -->
+    <div class="category-title">SAP Automation</div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h4>Automated SAP Daily Task Handler</h4>
+        <p>
+          Identified a critical daily SAP workflow that was consuming over 30 minutes of 
+          manual effort every single day. Engineered a fully automated solution using SAP GUI 
+          scripting and Excel VBA that executes the entire task in under 2 minutes with 
+          absolutely zero manual intervention — freeing the team to focus on higher-value work.
+        </p>
+        <p class="impact">30 min → under 2 min | 93% time reduction | Zero manual effort</p>
+        <span class="tag">Excel VBA</span>
+        <span class="tag">SAP GUI Scripting</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">AI</span>
+      </div>
+      <div class="project-card">
+        <h4>Bulk Sales Order Automation Engine</h4>
+        <p>
+          Rebuilt the bulk sales order creation process in SAP from the ground up. The original 
+          process was slow, error-prone, and took over 15 minutes per batch. The automated 
+          solution processes the same workload in 5 minutes with guaranteed zero errors — 
+          dramatically improving data accuracy and operational throughput.
+        </p>
+        <p class="impact">15 min → 5 min | 67% faster | Zero errors guaranteed</p>
+        <span class="tag">Excel VBA</span>
+        <span class="tag">SAP GUI Scripting</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">AI</span>
+      </div>
+      <div class="project-card">
+        <h4>Warehouse Operations Automation Tool</h4>
+        <p>
+          Developed a purpose-built automation tool for the warehouse team to handle their 
+          most demanding daily SAP task. What previously required 20 minutes of heavy manual 
+          effort every day now runs automatically in under 62 seconds — with no human 
+          intervention needed whatsoever.
+        </p>
+        <p class="impact">20 min → 62 seconds | 95% time reduction | Zero effort</p>
+        <span class="tag">Excel</span>
+        <span class="tag">SAP GUI Scripting</span>
+        <span class="tag">Power Query</span>
+      </div>
+    </div>
+
+    <!-- Business Intelligence -->
+    <div class="category-title">Business Intelligence Solutions</div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h4>Intelligent Stock Distribution Engine</h4>
+        <p>
+          Solved a complex and recurring operational challenge: how to fairly distribute shared 
+          inventory across multiple sales channels within the same branch. Designed and built a 
+          dynamic Excel-based intelligence model that applies a unified fairness rule — ensuring 
+          every channel receives exactly the stock needed to reach the same time-based sales goal 
+          simultaneously (e.g. all channels reach 60% of target at the same time). 
+          Supervisors simply input the product and available stock quantity, and the system 
+          instantly calculates each channel's fair share — accessible to all supervisors through 
+          a shared workbook.
+        </p>
+        <p class="impact">Fair distribution across all branches | Eliminates stock conflicts</p>
+        <span class="tag">Excel</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">Power Pivot</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+      <div class="project-card">
+        <h4>Chiller Maintenance Semi-Mobile Application</h4>
+        <p>
+          Redesigned the entire chiller maintenance order workflow from end to end to eliminate 
+          customer complaints caused by slow response times. Built a semi-mobile application 
+          that connects Excel, SAP GUI scripting, and SharePoint into one seamless pipeline. 
+          The chiller technician simply submits the asset number and customer phone number — 
+          the system automatically creates the SAP maintenance order and instantly emails the 
+          chiller department with all required customer and asset details. The entire process 
+          completes in under 30 seconds, transforming what was once a frustrating manual 
+          process into a near-instant automated experience.
+        </p>
+        <p class="impact">Customer complaints eliminated | Full order cycle under 30 seconds</p>
+        <span class="tag">Excel VBA</span>
+        <span class="tag">SAP GUI Scripting</span>
+        <span class="tag">SharePoint</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">AI</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LINKS -->
+  <div class="links-row">
+    <a class="link-btn" href="https://www.linkedin.com/in/mahmoud-abd-alraheem-b6ab69262">LinkedIn</a>
+    <a class="link-btn" href="https://github.com/mahmoud118417">GitHub</a>
+    <a class="link-btn" href="mailto:abdalraheemmahmoud453@gmail.com">Email Me</a>
+  </div>
+
+  <div class="footer">© 2025 Mahmoud Abd Alraheem · Built with GitHub Pages</div>
+
+</body>
+</html>
