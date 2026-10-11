@@ -1,358 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mahmoud Abd Alraheem | Data Analyst</title>
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+<title>UPE BI PLATFORM</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #103b80;
+}
+
+body {
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 28%,
+            rgba(187, 226, 250, .75),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #eaf6ff 0%,
+            #d9effc 48%,
+            #e8f7ff 100%
+        );
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    min-height: 100vh;
+    position: relative;
+
+    padding: 28px 4vw 115px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   BACKGROUND SHAPES
+========================= */
+
+.blob {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.top-left {
+    width: 390px;
+    height: 250px;
+
+    left: -170px;
+    top: -125px;
+
+    border-radius: 50%;
+
+    background: #c8e6fb;
+
+    transform: rotate(-25deg);
+}
+
+.top-wave {
+    width: 120%;
+    height: 190px;
+
+    left: -10%;
+    top: 205px;
+
+    border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+
+    background: rgba(196, 229, 248, .48);
+}
+
+
+/* Bottom wave */
+
+.bottom-wave {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+    bottom: -100px;
+
+    height: 250px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8cc9f6,
+            #56aaf0
+        );
+
+    border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+
+    transform: rotate(-2deg);
+
+    z-index: 0;
+}
+
+.bottom-wave::before {
+    content: "";
+
+    position: absolute;
+
+    left: -2%;
+    right: -2%;
+
+    top: -25px;
+
+    height: 70px;
+
+    background: #d7effd;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    min-height: 220px;
+}
+
+.logo {
+    width: 205px;
+
+    display: block;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin: 20px auto 50px;
+
+    max-width: 1000px;
+}
+
+.hero h1 {
+    margin: 0 0 22px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 64px;
+
+    line-height: 1.05;
+
+    color: #073b87;
+
+    letter-spacing: .5px;
+}
+
+
+/* Decorative lines */
+
+.hero h1::before,
+.hero h1::after {
+    content: "";
+
+    display: inline-block;
+
+    width: 38px;
+    height: 10px;
+
+    margin: 0 45px 15px 0;
+
+    border-radius: 20px;
+
+    background: #58b5f2;
+
+    box-shadow:
+        13px -25px 0 -2px #58b5f2,
+        13px 25px 0 -2px #58b5f2;
+
+    transform: rotate(-3deg);
+}
+
+.hero h1::after {
+    margin: 0 0 15px 45px;
+
+    transform: scaleX(-1);
+}
+
+.hero p {
+    margin: 0;
+
+    color: #4e7196;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 24px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* Card */
+
+.card {
+    min-height: 285px;
+
+    background: rgba(255,255,255,.92);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    border-radius: 25px;
+
+    padding:
+        25px
+        24px
+        28px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(57,123,165,.13);
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Decorative blue shape inside card */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -25px;
+    bottom: -42px;
+
+    width: 170px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7f0ff,
+            #43a9ef
+        );
+
+    border-radius: 65% 0 0 0;
+
+    transform: rotate(-8deg);
+
+    opacity: .95;
+}
+
+
+/* Status */
+
+.status {
+    width: max-content;
+
+    padding:
+        8px
+        15px;
+
+    border-radius: 20px;
+
+    background: #e5f3fc;
+
+    color: #1763a8;
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Green dot */
+
+.status.live::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 11px;
+    height: 11px;
+
+    background: #42c96a;
+
+    border-radius: 50%;
+
+    margin-right: 9px;
+}
+
+
+/* Card title */
+
+.card h2 {
+    position: relative;
+
+    z-index: 1;
+
+    margin:
+        30px
+        0
+        7px;
+
+    font-size: 25px;
+
+    line-height: 1.25;
+
+    color: #083d86;
+}
+
+
+/* Arabic text */
+
+.arabic {
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0;
+
+    color: #6683a2;
+
+    font-size: 17px;
+
+    direction: rtl;
+
+    text-align: left;
+}
+
+
+/* Open button (link styled as button) */
+
+.open {
+    margin-top: auto;
+
+    align-self: flex-start;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    padding:
+        13px
+        20px;
+
+    background: #0878d5;
+
+    color: white;
+
+    font-weight: 700;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 7px 14px
+        rgba(0,108,196,.18);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.open:hover {
+    background: #0568bc;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin:
+        72px
+        auto
+        0;
+
+    color: #52799e;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
+    .hero h1 {
+        font-size: 52px;
     }
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: #1e3a5f;
-      border: 3px solid #38bdf8;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: #38bdf8;
-      object-fit: cover;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            20px
+            18px
+            90px;
     }
-    .hero h1 { font-size: 40px; margin: 0 0 8px; color: #ffffff; }
-    .hero h2 { color: #38bdf8; font-size: 18px; margin: 0 0 20px; font-weight: normal; }
+
+
+    header {
+        min-height: 170px;
+    }
+
+
+    .logo {
+        width: 160px;
+    }
+
+.hero {
+        margin-top: 10px;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .hero h1::before,
+    .hero h1::after {
+        display: none;
+    }
+
+
     .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      line-height: 1.8;
-      font-size: 16px;
-      color: #94a3b8;
+        font-size: 18px;
+
+        line-height: 1.45;
     }
 
-    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: 13px 26px;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 15px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .btn-primary { background: #38bdf8; color: #0f172a; }
-    .btn-secondary {
-      background: transparent;
-      color: #38bdf8;
-      border: 2px solid #38bdf8;
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
     }
 
-    .section {
-      padding: 50px 20px;
-      border-top: 1px solid #1e293b;
-    }
-    .section h3 {
-      text-align: center;
-      font-size: 22px;
-      color: #38bdf8;
-      margin: 0 0 10px;
-      letter-spacing: 2px;
-    }
-    .section-sub {
-      text-align: center;
-      color: #64748b;
-      font-size: 14px;
-      margin: 0 0 30px;
-    }
 
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      max-width: 750px;
-      margin: 0 auto;
+    .card {
+        min-height: 240px;
     }
-    .skill {
-      background: #1e293b;
-      padding: 10px 22px;
-      border-radius: 8px;
-      font-size: 15px;
-      color: #94a3b8;
-      border: 1px solid #334155;
-    }
+}
 
-    .category-title {
-      font-size: 16px;
-      color: #38bdf8;
-      margin: 40px auto 16px;
-      text-align: center;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 10px;
-      max-width: 750px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 750px;
-      margin: 0 auto 10px;
-    }
-    .project-card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 24px;
-      border: 1px solid #334155;
-    }
-    .project-card h4 { margin: 0 0 10px; color: #e2e8f0; font-size: 16px; }
-    .project-card p { margin: 0; font-size: 14px; color: #64748b; line-height: 1.7; }
-    .tag {
-      display: inline-block;
-      background: #0f172a;
-      color: #38bdf8;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 5px;
-      margin: 8px 4px 0 0;
-      border: 1px solid #38bdf8;
-    }
-    .impact {
-      margin-top: 12px;
-      font-size: 13px;
-      color: #4ade80;
-      font-weight: bold;
-    }
-
-    .links-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      border-top: 1px solid #1e293b;
-    }
-    .link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 8px;
-      background: #1e293b;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 15px;
-      border: 1px solid #334155;
-    }
-    .link-btn:hover { border-color: #38bdf8; color: #38bdf8; }
-
-    .footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: #334155;
-      border-top: 1px solid #1e293b;
-    }
-  </style>
+</style>
 </head>
+
+
 <body>
 
-  <div class="hero">
-    <img src="photo.JPG" class="avatar" alt="Mahmoud" />
-    <h1>Mahmoud Abd Alraheem</h1>
-    <h2>Data Analyst &nbsp;|&nbsp; Power BI &nbsp;|&nbsp; SAP SD &nbsp;|&nbsp; Automation</h2>
-    <p>
-      A results-driven Data Analyst with a proven track record of designing and delivering 
-      high-impact business intelligence solutions, SAP automation tools, and Power BI 
-      reporting systems in the FMCG sector. Specialized in turning complex operational 
-      challenges into smart, automated solutions that save time, eliminate errors, and 
-      empower decision-makers with real-time insights.
-    </p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="mailto:abdalraheemmahmoud453@gmail.com">Contact Me</a>
-      <a class="btn btn-secondary" href="cv.pdf" download>Download CV</a>
-    </div>
-  </div>
+<div class="page">
 
-  <!-- SKILLS -->
-  <div class="section">
-    <h3>SKILLS</h3>
-    <div class="skills-grid">
-      <div class="skill">Power BI</div>
-      <div class="skill">DAX</div>
-      <div class="skill">SAP SD</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Power Query</div>
-      <div class="skill">Excel VBA</div>
-      <div class="skill">Automation</div>
-      <div class="skill">Data Modeling</div>
-      <div class="skill">Business Intelligence</div>
-      <div class="skill">SAP GUI Scripting</div>
-      <div class="skill">SharePoint</div>
-      <div class="skill">Sales Buzz</div>
-      <div class="skill">Power Pivot</div>
-    </div>
-  </div>
 
-  <!-- PROJECTS -->
-  <div class="section">
-    <h3>PROJECTS</h3>
-    <p class="section-sub">Enterprise-grade solutions built from scratch to solve real business challenges</p>
+    <!-- Background -->
+    <div class="blob top-left"></div>
 
-    <!-- Power BI -->
-    <div class="category-title">Power BI Reports</div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h4>Unified Regional Intelligence Report</h4>
+    <div class="blob top-wave"></div>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <!-- ضع صورة اللوجو في نفس المجلد باسم juhayna-logo.png -->
+        <img
+            class="logo"
+            src="juhayna-logo.png"
+            alt="Juhayna"
+            onerror="this.style.display='none'"
+        >
+
+    </header>
+
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <h1>
+            UPE BI PLATFORM
+        </h1>
+
+
         <p>
-          Pioneered the company's first fully unified Power BI report covering the Upper Egypt 
-          and Canal Region — a complex territory spanning 13 governorates and over 100 sales 
-          territories. The report is automatically refreshed every morning to deliver the latest 
-          sales performance data and actionable insights to leadership. Built with Row-Level 
-          Security (RLS) to ensure each stakeholder sees only their relevant data, maintaining 
-          full confidentiality across the organization.
+            One place to launch every live tool and report .
         </p>
-        <p class="impact">Serving 25+ stakeholders | 13 governorates | 100+ territories</p>
-        <span class="tag">Power BI</span>
-        <span class="tag">DAX</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">SAP</span>
-        <span class="tag">Data Modeling</span>
-        <span class="tag">Row Level Security</span>
-      </div>
-      <div class="project-card">
-        <h4>Dual-Source Sales Intelligence Report</h4>
-        <p>
-          Designed and delivered the company's first Power BI report to successfully integrate 
-          two previously siloed sales data sources — SAP ERP (direct sales) and Sales Buzz 
-          (indirect sales) — into a single unified reporting view. This breakthrough eliminated 
-          blind spots in sales tracking and gave management a complete 360° picture of sales 
-          performance for the first time in the company's history.
-        </p>
-        <p class="impact">First dual-source report in company history | Full sales visibility</p>
-        <span class="tag">Power BI</span>
-        <span class="tag">DAX</span>
-        <span class="tag">SAP ERP</span>
-        <span class="tag">Sales Buzz</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">Data Modeling</span>
-      </div>
+
+    </section>
+
+
+
+    <!-- Cards (generated from the TOOLS list in the script below) -->
+
+    <main class="cards" id="cards"></main>
+
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        Built &amp; Created by Mahmoud Abdelraheem
+        “For Any Questions Text Me 01033356794 Via Whats up”.
+
     </div>
 
-    <!-- SAP Automation -->
-    <div class="category-title">SAP Automation</div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h4>Automated SAP Daily Task Handler</h4>
-        <p>
-          Identified a critical daily SAP workflow that was consuming over 30 minutes of 
-          manual effort every single day. Engineered a fully automated solution using SAP GUI 
-          scripting and Excel VBA that executes the entire task in under 2 minutes with 
-          absolutely zero manual intervention — freeing the team to focus on higher-value work.
-        </p>
-        <p class="impact">30 min → under 2 min | 93% time reduction | Zero manual effort</p>
-        <span class="tag">Excel VBA</span>
-        <span class="tag">SAP GUI Scripting</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">AI</span>
-      </div>
-      <div class="project-card">
-        <h4>Bulk Sales Order Automation Engine</h4>
-        <p>
-          Rebuilt the bulk sales order creation process in SAP from the ground up. The original 
-          process was slow, error-prone, and took over 15 minutes per batch. The automated 
-          solution processes the same workload in 5 minutes with guaranteed zero errors — 
-          dramatically improving data accuracy and operational throughput.
-        </p>
-        <p class="impact">15 min → 5 min | 67% faster | Zero errors guaranteed</p>
-        <span class="tag">Excel VBA</span>
-        <span class="tag">SAP GUI Scripting</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">AI</span>
-      </div>
-      <div class="project-card">
-        <h4>Warehouse Operations Automation Tool</h4>
-        <p>
-          Developed a purpose-built automation tool for the warehouse team to handle their 
-          most demanding daily SAP task. What previously required 20 minutes of heavy manual 
-          effort every day now runs automatically in under 62 seconds — with no human 
-          intervention needed whatsoever.
-        </p>
-        <p class="impact">20 min → 62 seconds | 95% time reduction | Zero effort</p>
-        <span class="tag">Excel</span>
-        <span class="tag">SAP GUI Scripting</span>
-        <span class="tag">Power Query</span>
-      </div>
-    </div>
 
-    <!-- Business Intelligence -->
-    <div class="category-title">Business Intelligence Solutions</div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h4>Intelligent Stock Distribution Engine</h4>
-        <p>
-          Solved a complex and recurring operational challenge: how to fairly distribute shared 
-          inventory across multiple sales channels within the same branch. Designed and built a 
-          dynamic Excel-based intelligence model that applies a unified fairness rule — ensuring 
-          every channel receives exactly the stock needed to reach the same time-based sales goal 
-          simultaneously (e.g. all channels reach 60% of target at the same time). 
-          Supervisors simply input the product and available stock quantity, and the system 
-          instantly calculates each channel's fair share — accessible to all supervisors through 
-          a shared workbook.
-        </p>
-        <p class="impact">Fair distribution across all branches | Eliminates stock conflicts</p>
-        <span class="tag">Excel</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">Power Pivot</span>
-        <span class="tag">DAX</span>
-        <span class="tag">Data Modeling</span>
-      </div>
-      <div class="project-card">
-        <h4>Chiller Maintenance Semi-Mobile Application</h4>
-        <p>
-          Redesigned the entire chiller maintenance order workflow from end to end to eliminate 
-          customer complaints caused by slow response times. Built a semi-mobile application 
-          that connects Excel, SAP GUI scripting, and SharePoint into one seamless pipeline. 
-          The sales rep simply submits the asset number and customer phone number — 
-          the system automatically creates the SAP maintenance order and instantly emails the 
-          chiller department with all required customer and asset details. The entire process 
-          completes in under 30 seconds, transforming what was once a frustrating manual 
-          process into a near-instant automated experience.
-        </p>
-        <p class="impact">Customer complaints eliminated | Full order cycle under 30 seconds</p>
-        <span class="tag">Excel VBA</span>
-        <span class="tag">SAP GUI Scripting</span>
-        <span class="tag">SharePoint</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">AI</span>
-      </div>
-    </div>
 
-  </div>
+    <!-- Bottom Background -->
 
-  <!-- LINKS -->
-  <div class="links-row">
-    <a class="link-btn" href="https://www.linkedin.com/in/mahmoud-abd-alraheem-b6ab69262">LinkedIn</a>
-    <a class="link-btn" href="https://github.com/mahmoud118417">GitHub</a>
-    <a class="link-btn" href="mailto:abdalraheemmahmoud453@gmail.com">Email Me</a>
-  </div>
+    <div class="bottom-wave"></div>
 
-  <div class="footer">© 2025 Mahmoud Abd Alraheem · Built with GitHub Pages</div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   TOOLS LIST
+   To add a new tool: copy one line, change the values.
+   - name  : English title
+   - arabic: Arabic subtitle ("" for none)
+   - url   : link opened by the button
+   - live  : true  = green "Live" badge
+             false = shows the "badge" text instead
+   - badge : text shown when live is false
+========================================================= */
+
+const TOOLS = [
+
+    {
+        name: "Business Report G4",
+        arabic: "",
+        url: "https://app.powerbi.com/links/0RA6DzVGqW?ctid=dff3b52a-616d-410c-86ac-d5099507708c&pbi_source=linkShare",
+        live: true
+    },
+
+    {
+        name: "Chiller Maintenance",
+        arabic: "صيانة الثلاجات",
+        url: "https://juhaynafood-my.sharepoint.com/:l:/g/personal/mahmoud_abdelraheem_juhayna_com/JACO6kCkCA2SS7eWvbU65IfyAWWB6xA1nHinFGC3EohClPE?nav=OTJhYWY2NWYtNGE1MS00YzZkLWExMzItZGZmZTMzZGMxMzM5",
+        live: true
+    },
+
+    {
+        name: "New Customer",
+        arabic: "تكويد العملاء",
+        url: "https://mahmoud118417.github.io/customer-app/",
+        live: true
+    },
+
+    {
+        name: "Allocation System",
+        arabic: "حصص القنوات في المنتجات الجافة",
+        url: "https://juhaynafood-my.sharepoint.com/:x:/g/personal/mahmoud_abdelraheem_juhayna_com/cQrnMAUwDgEGRrXkSBJZBpyLEgUCf8JH1WjLUcUQSqBjnoY-UQ",
+        live: false,
+        badge: "▣ Desktop Only"
+    },
+
+    {
+        name: "Oracle",
+        arabic: "",
+        url: "https://hcm55.sapsf.eu/sf/home?bplte_company=juhaynafoo&_s.crb=F6WpXprPbhSjncibBnTqmGMDyYNbT2svpKrtmdzT9EA%253d",
+        live: true
+    },
+
+    {
+        name: "Service Desk",
+        arabic: "",
+        url: "https://servicedesk.juhayna.com/app/849448762/HomePage.do",
+        live: true
+    }
+
+];
+
+
+/* =========================================================
+   RENDER
+========================================================= */
+
+(function () {
+
+    const container = document.getElementById("cards");
+
+    TOOLS.forEach(function (tool) {
+
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const status = document.createElement("div");
+        status.className = tool.live ? "status live" : "status";
+        status.textContent = tool.live ? "Live" : (tool.badge || "");
+        card.appendChild(status);
+
+        const title = document.createElement("h2");
+        title.textContent = tool.name;
+        card.appendChild(title);
+
+        if (tool.arabic) {
+            const ar = document.createElement("p");
+            ar.className = "arabic";
+            ar.textContent = tool.arabic;
+            card.appendChild(ar);
+        }
+
+        const open = document.createElement("a");
+        open.className = "open";
+        open.href = tool.url;
+        open.target = "_blank";
+        open.rel = "noopener noreferrer";
+        open.textContent = "Open →";
+        card.appendChild(open);
+
+        container.appendChild(card);
+
+    });
+
+})();
+</script>
 
 </body>
 </html>
